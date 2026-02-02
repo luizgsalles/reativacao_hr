@@ -435,13 +435,13 @@ if uploaded_files:
             st.divider()
             st.write("**💬 Mensagem de Reativação Sugerida:**")
 
-            top_produtos = sorted(info_cliente['Produtos'], key=lambda x: (
+            todos_produtos = sorted(info_cliente['Produtos'], key=lambda x: (
                 'VESTIDO' in x.upper(),
                 'BLUSA' in x.upper(),
                 'CAMISA' in x.upper()
-            ), reverse=True)[:3]
+            ), reverse=True)
 
-            produtos_texto = ' | '.join(top_produtos)
+            produtos_texto = ' | '.join(todos_produtos)
 
             msg = f"""
 Oi {cliente_selecionado.split()[0]}! 👋
