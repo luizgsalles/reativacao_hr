@@ -106,12 +106,16 @@ def processar_produtos_cliente(file_content):
 
                     if prod_col3 and prod_col9:
                         descricao = str(prod_col3).strip()
-                        if descricao.lower() not in ['descricao', '']:
-                            produtos.append({
-                                'descricao': descricao,
-                                'quantidade': int(prod_col9) if prod_col9 else 1,
-                                'valor': float(prod_col13) if prod_col13 else 0
-                            })
+                        # Pula linhas de header
+                        if descricao.lower() not in ['descricao', ''] and str(prod_col9).lower() not in ['quantidade', '']:
+                            try:
+                                produtos.append({
+                                    'descricao': descricao,
+                                    'quantidade': int(float(str(prod_col9).replace(',', '.').rstrip('.'))) if prod_col9 else 1,
+                                    'valor': float(prod_col13) if prod_col13 else 0
+                                })
+                            except (ValueError, TypeError):
+                                pass  # Ignora linhas com dados inválidos
 
                     j += 1
 
