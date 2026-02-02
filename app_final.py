@@ -516,5 +516,5 @@ st.markdown("""
 ---
 **Sistema de Reativação de Clientes - Versão Final**
 
-Desenvolvido com ❤️ para lojas de roupas
+Desenvolvido com ❤️ para HR Curvelo
 """)
