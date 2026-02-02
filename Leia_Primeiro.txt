@@ -1,0 +1,78 @@
+================================================================================
+    SISTEMA DE REATIVACAO DE CLIENTES
+================================================================================
+
+  OI! Bem-vindo ao sistema que vai te ajudar a reativar clientes!
+
+  ================================================================================
+    COMO USAR (5 PASSOS SIMPLES)
+  ================================================================================
+
+  PASSO 1: Clique 2x em "instalar.bat"
+  ────────────────────────────────────
+  Este arquivo vai instalar tudo que o sistema precisa de forma automática.
+  Deixa a instalação rodar até o final (você verá uma mensagem de sucesso).
+
+
+  PASSO 2: Clique 2x em "run_final.bat"
+  ────────────────────────────────────
+  Só isso! O dashboard abre no seu navegador em http://localhost:8501
+
+
+  PASSO 3: Exporte os arquivos do ERP
+  ────────────────────────────────────
+  No seu ERP, exporte:
+    • VENDAS POR ORDEM CRONOLOGICA.xls
+    • PRODUTOS VENDIDOS POR CLIENTE DURANTE PERIODO.xls
+
+  Salve em qualquer lugar (desktop, downloads, etc).
+
+
+  PASSO 4: Faça upload no dashboard
+  ──────────────────────────────────
+  Quando o dashboard abrir:
+    1. Clique em "Selecione os arquivos XLS"
+    2. Escolha os 2 arquivos que você exportou
+    3. Pronto! O sistema processa automaticamente
+
+
+  PASSO 5: Veja o ranking e copie as mensagens
+  ─────────────────────────────────────────────
+    • Veja quais clientes pararam de comprar
+    • Veja EXATAMENTE qual produto cada uma comprou
+    • Copie a mensagem sugerida
+    • Dispare no WhatsApp, Email ou SMS
+
+
+  ================================================================================
+    DÚVIDAS?
+  ================================================================================
+
+  P: O que o sistema faz?
+  R: Lê seus dados de vendas e mostra quais clientes não compram há mais tempo
+     (e quais produtos ela gosta). Pronto para mandar mensagem de reativação!
+
+  P: Preciso instalar algo?
+  R: Sim! Clique 2x em "instalar.bat" na primeira vez. Depois, só clique em "run_final.bat"
+
+  P: Funciona em Mac/Linux?
+  R: Sim! Abra o terminal e digite: streamlit run app_final.py
+
+  P: E se tiver problema?
+  R: Certifique que:
+     1. Os arquivos XLS estão no formato correto
+     2. Escolhe os 2 arquivos (vendas + produtos)
+     3. Espera o processamento terminar
+
+  ================================================================================
+    LEIA TAMBÉM
+  ================================================================================
+
+  📖 VERSAO_FINAL.md - Guia completo com todas as funcionalidades
+  📖 GUIA_MENSAGENS_REATIVACAO.md - Modelos de mensagens personalizadas
+
+  ================================================================================
+
+  Boa sorte na reativação! 🚀
+
+  Desenvolvido com ❤️ para HR Curvelo
