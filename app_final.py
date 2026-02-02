@@ -94,6 +94,12 @@ def processar_produtos_cliente(file_content):
 
                 while j < sheet.nrows:
                     prod_row = sheet.row_values(j)
+                    col1_check = prod_row[1] if len(prod_row) > 1 else ""
+
+                    # Se encontrou próximo cliente, sai do loop
+                    if isinstance(col1_check, str) and " - " in str(col1_check):
+                        break
+
                     prod_col3 = prod_row[3] if len(prod_row) > 3 else ""
                     prod_col9 = prod_row[9] if len(prod_row) > 9 else 0
                     prod_col13 = prod_row[13] if len(prod_row) > 13 else 0
@@ -106,9 +112,8 @@ def processar_produtos_cliente(file_content):
                                 'quantidade': int(prod_col9) if prod_col9 else 1,
                                 'valor': float(prod_col13) if prod_col13 else 0
                             })
-                        j += 1
-                    else:
-                        break
+
+                    j += 1
 
                 if produtos:
                     clientes_produtos[cliente_id] = {
