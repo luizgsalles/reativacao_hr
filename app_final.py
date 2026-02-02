@@ -353,28 +353,7 @@ if uploaded_files:
     )
 
     # ====================================================================
-    # SEÇÃO 3: GRÁFICOS
-    # ====================================================================
-    st.divider()
-    st.subheader("📈 Análises Visuais")
-
-    col1, col2 = st.columns(2)
-
-    with col1:
-        st.write("**Top 10 Clientes por LTV**")
-        top_ltv = ranking_df.nlargest(10, 'Total_Gasto_LTV')
-        st.bar_chart(
-            data=top_ltv.set_index('Cliente_Nome')[['Total_Gasto_LTV']],
-            use_container_width=True
-        )
-
-    with col2:
-        st.write("**Distribuição: Dias Parado**")
-        hist_data = ranking_df['Dias_Parado'].value_counts().sort_index()
-        st.bar_chart(data=hist_data, use_container_width=True)
-
-    # ====================================================================
-    # SEÇÃO 4: DETALHES POR CLIENTE
+    # SEÇÃO 3: DETALHES POR CLIENTE
     # ====================================================================
     st.divider()
     st.subheader("🔍 Detalhes Completos por Cliente")
@@ -471,6 +450,27 @@ Chegou tudo NOVO e LINDO! Volte logo!
 
         else:
             st.warning("Sem produtos registrados para esta cliente")
+
+    # ====================================================================
+    # SEÇÃO 4: ANÁLISES VISUAIS
+    # ====================================================================
+    st.divider()
+    st.subheader("📈 Análises Visuais")
+
+    col1, col2 = st.columns(2)
+
+    with col1:
+        st.write("**Top 10 Clientes por LTV**")
+        top_ltv = ranking_df.nlargest(10, 'Total_Gasto_LTV')
+        st.bar_chart(
+            data=top_ltv.set_index('Cliente_Nome')[['Total_Gasto_LTV']],
+            use_container_width=True
+        )
+
+    with col2:
+        st.write("**Distribuição: Dias Parado**")
+        hist_data = ranking_df['Dias_Parado'].value_counts().sort_index()
+        st.bar_chart(data=hist_data, use_container_width=True)
 
     # ====================================================================
     # SEÇÃO 5: DOWNLOADS
