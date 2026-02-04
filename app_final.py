@@ -516,7 +516,7 @@ else:
 st.divider()
 st.markdown("""
 ---
-**Sistema de Reativação de Clientes - Versão Final**
+**Sistema de Reativação de Clientes - Versão 1.0**
 
 Desenvolvido com ❤️ para HR Curvelo
 """)
