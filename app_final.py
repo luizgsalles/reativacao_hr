@@ -299,20 +299,20 @@ if uploaded_files:
     col1, col2, col3 = st.columns(3)
 
     with col1:
-        dias_filtro = st.slider(
-            "Mínimo de dias parado",
+        dias_min, dias_max = st.slider(
+            "Dias parado (entre)",
             min_value=0,
             max_value=int(ranking_df['Dias_Parado'].max()),
-            value=0,
+            value=(0, int(ranking_df['Dias_Parado'].max())),
             step=10
         )
 
     with col2:
-        gasto_filtro = st.slider(
-            "Mínimo gasto total (R$)",
+        gasto_min, gasto_max = st.slider(
+            "Gasto total (entre R$)",
             min_value=0,
             max_value=int(ranking_df['Total_Gasto_LTV'].max()),
-            value=0,
+            value=(0, int(ranking_df['Total_Gasto_LTV'].max())),
             step=100
         )
 
@@ -326,8 +326,10 @@ if uploaded_files:
         )
 
     ranking_filtrado = ranking_df[
-        (ranking_df['Dias_Parado'] >= dias_filtro) &
-        (ranking_df['Total_Gasto_LTV'] >= gasto_filtro)
+        (ranking_df['Dias_Parado'] >= dias_min) &
+        (ranking_df['Dias_Parado'] <= dias_max) &
+        (ranking_df['Total_Gasto_LTV'] >= gasto_min) &
+        (ranking_df['Total_Gasto_LTV'] <= gasto_max)
     ].head(limite).copy()
 
     st.dataframe(
